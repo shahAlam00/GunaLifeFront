@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    /* ── Brand Core ── */
+    --brand-primary: #061F50;
+    /* Main navy blue — headings, buttons, brand elements */
+
+    --brand-deep: #041535;
+    /* Deep navy — footer and dark sections */
+
+    --brand-light: #123A70;
+    /* Lighter navy — hover states */
+
+    /* ── Page Surfaces ── */
+    --bg-cream: #FFFFFF;
+    /* Main page background */
+
+    --bg-warm: #F3F7F7;
+    /* Card and alternate section background */
+
+    --bg-muted: #EAF3F2;
+    /* Soft teal-tinted sections */
+
+    /* ── Text ── */
+    --text-on-cream: #26354D;
+    /* Body text on light backgrounds */
+
+    --text-on-dark: #FFFFFF;
+    /* Body text on dark sections */
+
+    --text-blush: #F3D5E1;
+    /* Soft pink text accents on dark backgrounds */
+
+    --text-blush-alt: #F8E8EE;
+    /* Alternate soft pink */
+
+    --text-heading-dark: #061F50;
+    /* Headings on light backgrounds */
+
+    /* ── Borders ── */
+    --border-cream: #E2E8F0;
+    /* Borders on white backgrounds */
+
+    --border-warm: #D8E6E5;
+    /* Card borders */
+
+    --border-muted: #C7DCDA;
+    /* Muted section borders */
+
+    /* ── Accent / Teal Green ── */
+    --accent-gold: #079B83;
+    /* Retained variable name for compatibility; now teal */
+
+    /* ── TopBanner ── */
+    --banner-bg: #061F50;
+    --banner-text: #FFFFFF;
+    --banner-border: rgba(255, 255, 255, 0.2);
+
+    /* ── Additional Brand Colors ── */
+    --brand-teal: #079B83;
+    --brand-teal-hover: #067F6D;
+    --brand-pink: #E99AB8;
+
+    --text-muted: #64748B;
+    --color-white: #FFFFFF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--text-on-cream);
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+
+  /* Remove default browser outline/ring on all links and buttons */
+  a,
+  a:hover,
+  a:focus,
+  a:focus-visible,
+  a:active,
+  button:focus,
+  button:focus-visible {
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-heading-dark);
+  }
+}
+
+
+/* ── Tailwind-compatible CSS variable utilities ── */
+@layer utilities {
+
+  /* backgrounds */
+  .bg-brand-primary {
+    background-color: var(--brand-primary);
+  }
+
+  .bg-brand-deep {
+    background-color: var(--brand-deep);
+  }
+
+  .bg-brand-light {
+    background-color: var(--brand-light);
+  }
+
+  .bg-cream {
+    background-color: var(--bg-cream);
+  }
+
+  .bg-warm {
+    background-color: var(--bg-warm);
+  }
+
+  .bg-muted-warm {
+    background-color: var(--bg-muted);
+  }
+
+  /* text */
+  .text-brand-primary {
+    color: var(--brand-primary);
+  }
+
+  .text-brand-deep {
+    color: var(--brand-deep);
+  }
+
+  .text-on-dark {
+    color: var(--text-on-dark);
+  }
+
+  .text-blush {
+    color: var(--text-blush);
+  }
+
+  .text-blush-alt {
+    color: var(--text-blush-alt);
+  }
+
+  .text-heading-dark {
+    color: var(--text-heading-dark);
+  }
+
+  /* borders */
+  .border-cream {
+    border-color: var(--border-cream);
+  }
+
+  .border-warm {
+    border-color: var(--border-warm);
+  }
+
+  .border-muted-warm {
+    border-color: var(--border-muted);
+  }
+
+  .border-brand-primary {
+    border-color: var(--brand-primary);
+  }
+}
+
+/* ── Scrollbar theme ── */
+.shop-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.shop-scrollbar::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+.shop-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--brand-primary);
+  border-radius: 9999px;
+}
+
+.shop-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--brand-deep);
+}
+
+/* ── Remove all focus rings and outlines globally (navbar hover fix) ── */
+*:focus,
+*:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+a,
+a:hover,
+a:focus,
+a:focus-visible,
+a:active {
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Custom Animations ── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+/* Product image magnifier */
+.product-image-wrapper {
+  position: relative;
+  isolation: isolate;
+}
+
+.product-card-image-zoom {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.product-card-image-zoom .iiz,
+.product-card-image-zoom .iiz__img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-card-image-zoom .iiz__img {
+  object-fit: contain;
+}
+
+.product-card-image-zoom .iiz__zoom-img {
+  object-fit: contain;
+}
+
+/* Keep image zoom above nearby content */
+.product-image-wrapper .iiz__zoom-portal {
+  z-index: 50;
+}
