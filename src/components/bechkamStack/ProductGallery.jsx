@@ -4,6 +4,8 @@ import Prod3 from '../../assets/Prod3.png'
 import Prod4 from '../../assets/Prod4.png'
 import Prod1 from '../../assets/Prod1.png'
 import Prod2 from '../../assets/Prod2.png'
+import Prod5 from '../../assets/Prod5.jpeg'
+import Prod6 from '../../assets/Prod6.jpeg'
 const ProductGallery = ({ onOpenNutritionModal }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -41,14 +43,14 @@ const ProductGallery = ({ onOpenNutritionModal }) => {
     {
       id: 4,
       title: "Full GunaLife Supplement Facts",
-      src: Prod1,
+      src: Prod5,
       alt: "Complete GunaLife nutrition label and active ingredients list",
       isCustomCard: false
     },
     {
       id: 5,
       title: "GunaLife vs Traditional 16+ Pill Protocols",
-      src: Prod2,
+      src: Prod6,
       alt: "GunaLife vs Traditional 16+ Pill Protocols",
       isCustomCard: false
     }
