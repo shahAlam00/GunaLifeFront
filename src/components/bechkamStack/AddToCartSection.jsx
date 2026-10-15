@@ -10,7 +10,7 @@ const AddToCartSection = ({ selectedPlan, selectedFlavor, onAddToCart }) => {
   const getPrice = () => {
     switch (selectedPlan) {
       case '90-day':
-        return 'Dhs. 932.33 /mo';
+        return 'Mrp. 932.33 /mo';
       case '30-day':
         return 'Dhs. 1,065 /mo';
       case 'one-time':

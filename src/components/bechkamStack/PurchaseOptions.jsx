@@ -6,90 +6,59 @@ import Prod1 from '../../assets/Prod1.png'
 const PurchaseOptions = ({ selectedPlan, onSelectPlan, onOpenWelcomeKitModal }) => {
   const [showKitDetails, setShowKitDetails] = useState(false);
 
-  const plans = [
-    {
-      id: '90-day',
-      title: '90-Day Supply',
-      discountBadge: 'SAVE 33%',
-      isBestValue: true,
-      priceMonthly: '932.33',
-      billedText: 'Billed Dhs. 2,797.00 every 12 weeks',
-      perDayText: 'Dhs. 31.08 AED / DAY',
-      features: [
-        'Exclusive Access to 90 Day GunaLife Transformation Program (US $180 in value)',
-        'Free GunaLife Welcome Kit (Dhs. 377 in value)',
-        'Maximum savings — lowest price per serving',
-        '90-Day Money-Back Guarantee',
-        'Cancel or pause anytime'
-      ],
-      welcomeKit: {
-        totalValue: 'Dhs. 377',
-        itemsCount: '3 items',
-        items: [
-          {
-            name: 'Signature Red Bottle',
-            price: 'Dhs. 170',
-            img: Prod3
-          },
-          {
-            name: 'Luxe Edition Mixer',
-            price: 'Dhs. 70',
-            img: Prod4
-          },
-          {
-            name: '5x Bonus Sachets',
-            price: 'Dhs. 137',
-            img: Prod1
-          }
-        ]
-      }
-    },
-    {
-      id: '30-day',
-      title: '30-Day Supply',
-      discountBadge: 'SAVE 20%',
-      isBestValue: false,
-      priceMonthly: '1,065',
-      billedText: 'Billed Dhs. 1,065.00 every 4 weeks',
-      perDayText: 'Dhs. 35.50 AED / DAY',
-      features: [
-        'Free GunaLife Welcome Kit (Dhs. 240 in value)',
-        '90-Day Money-Back Guarantee',
-        'Cancel or pause anytime'
-      ],
-      welcomeKit: {
-        totalValue: 'Dhs. 240',
-        itemsCount: '2 items',
-        items: [
-          {
-            name: 'Signature Red Bottle',
-            price: 'Dhs. 170',
-            img: 'https://im8health.com/cdn/shop/files/red-cup3_peach_1.jpg?v=1758690939&width=240'
-          },
-          {
-            name: '5x Bonus Sachets',
-            price: 'Dhs. 70',
-            img: 'https://im8health.com/cdn/shop/files/bonus_sachets_1.png?v=1776413344&width=240'
-          }
-        ]
-      }
-    },
-    {
-      id: 'one-time',
-      title: 'One-Time Purchase',
-      discountBadge: null,
-      isBestValue: false,
-      priceMonthly: '1,335',
-      billedText: 'One-time delivery of 30-day supply',
-      perDayText: 'Dhs. 44.50 AED / DAY',
-      features: [
-        'Single 30-day supply (no recurring subscription)',
-        '30-Day Money-Back Guarantee',
-        'Standard GunaLife Welcome Gift'
-      ],
-      welcomeKit: null
-    }
-  ];
+const plans = [
+  {
+    id: '90-day',
+    title: '90-Day Supply',
+    discountBadge: '30% OFF',
+    isBestValue: true,
+    priceMonthly: '1,999',
+    mrp: '2,999',
+    billedText: 'Billed ₹5,997 every 90 days',
+    perDayText: 'Approx. ₹66.63 / DAY',
+    features: [
+      'Supports exercise performance and muscle recovery',
+      'Designed for fitness enthusiasts and gym-goers',
+      'Supports energy metabolism and healthy ageing',
+      'Ideal for adults with an active lifestyle',
+      'Built for long-term performance and wellness',
+    ],
+    welcomeKit: null,
+  },
+  {
+    id: '30-day',
+    title: '30-Day Supply',
+    discountBadge: '30% OFF',
+    isBestValue: false,
+    priceMonthly: '1,999',
+    mrp: '2,999',
+    billedText: 'One-time payment of ₹1,999',
+    perDayText: 'Approx. ₹66.63 / DAY',
+    features: [
+      '150 g GUNA-AGE+ Athletes + Longevity',
+      'Supports muscle performance and recovery',
+      'Combines performance-focused nutrients and antioxidants',
+      'Suitable for wellness-conscious adults',
+    ],
+    welcomeKit: null,
+  },
+  {
+    id: 'one-time',
+    title: 'One-Time Purchase',
+    discountBadge: '30% OFF',
+    isBestValue: false,
+    priceMonthly: '1,999',
+    mrp: '2,999',
+    billedText: 'One-time delivery of 150 g supply',
+    perDayText: 'Approx. ₹66.63 / DAY',
+    features: [
+      'Single 150 g product purchase',
+      'No recurring subscription',
+      'Supports performance, recovery, and long-term wellness',
+    ],
+    welcomeKit: null,
+  },
+];
 
   return (
     <div className="space-y-4 pt-4">
@@ -150,7 +119,7 @@ const PurchaseOptions = ({ selectedPlan, onSelectPlan, onOpenWelcomeKitModal }) 
                   {/* Price */}
                   <div className="text-right flex-shrink-0">
                     <div className="text-lg sm:text-2xl font-serif font-bold text-[var(--brand-primary)] leading-none">
-                      Dhs. {plan.priceMonthly}
+                      Mrp. {plan.priceMonthly}
                       <span className="text-xs sm:text-sm font-sans font-normal text-[var(--text-muted)]">
                         {plan.id === 'one-time' ? '' : ' /mo'}
                       </span>
