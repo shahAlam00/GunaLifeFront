@@ -1,31 +1,23 @@
-
 import React from "react";
-
+import Hero2 from '../../assets/Hero2.png'
 export default function WelcomeGunaLife() {
-  const dummyVideo = "/videos/gunalife-welcome.mp4";
+  // Replace this Unsplash URL with your custom image asset path or URL
+  // const heroImage = "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=85";
 
   return (
     <section className="grid min-h-[620px] w-full grid-cols-1 overflow-hidden bg-[var(--brand-primary)] md:min-h-[700px] md:grid-cols-2 lg:h-screen lg:min-h-[650px] lg:max-h-[1000px]">
-      {/* LEFT: Video */}
+      {/* LEFT: Image Container */}
       <div className="relative min-h-[360px] overflow-hidden bg-[var(--brand-deep)] sm:min-h-[450px] md:min-h-full">
-        <video
-          className="absolute inset-0 h-full w-full object-cover object-center"
-          src={dummyVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          controls
-          preload="metadata"
-          poster="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=85"
-        >
-          Your browser does not support HTML video.
-        </video>
+        <img
+          src={Hero2}
+          alt="GunaLife Wellness"
+          className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
+        />
 
-        {/* Subtle cinematic overlay */}
+        {/* Subtle cinematic gradient overlay */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"
         />
       </div>
 

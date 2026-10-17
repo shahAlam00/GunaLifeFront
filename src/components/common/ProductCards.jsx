@@ -1,9 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import InnerImageZoom from 'react-inner-image-zoom';
-import 'react-inner-image-zoom/lib/styles.min.css';
-
 import Prod3 from '../../assets/Prod3.png';
 import Prod4 from '../../assets/Prod4.png';
 
@@ -18,9 +15,9 @@ const products = [
     title: 'GUNALIFE GUNA-AGE+ Skin Transformation Longevity',
     description:
       'Scientifically formulated daily skin transformation supplement designed to support skin health, hydration, elasticity, and radiance while promoting a smoother, brighter, and more youthful-looking complexion from within.',
-    mrp: '₹2,999',
-    price: '₹1,999.00',
-    perServing: '≈ ₹46.64/serving',
+    mrp: '₹1699',
+    price: '₹1,189.00',
+    perServing: '≈ ₹510.00/serving',
     discountBadge: '30% OFF',
     subtext: 'Free shipping included',
     features: [
@@ -43,9 +40,9 @@ const products = [
     title: 'GUNALIFE GUNA-AGE+ Athletes + Longevity',
     description:
       'GUNALIFE GUNA-AGE+ Athletes + Longevity is an advanced daily supplement formulated to support exercise performance, muscle recovery, energy metabolism, and healthy ageing with key nutrients and antioxidants.',
-    mrp: '₹2,999',
-    price: '₹1,999.00',
-    perServing: '≈ ₹46.64/serving',
+    mrp: '₹1,999',
+    price: '₹1,399.00',
+    perServing: '≈ ₹600.00/serving',
     discountBadge: '30% OFF',
     subtext: 'Free shipping included',
     features: [
@@ -86,11 +83,10 @@ const ProductCards = () => {
           {products.map((product) => (
             <article
               key={product.id}
-              className={`relative w-full max-w-[380px] mx-auto bg-[var(--bg-cream)] rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ${
-                product.isFeatured
-                  ? 'border-2 border-[var(--brand-primary)] shadow-xl'
-                  : 'border border-[var(--border-cream)] shadow-md hover:shadow-lg'
-              }`}
+              className={`relative w-full max-w-[380px] mx-auto bg-[var(--bg-cream)] rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ${product.isFeatured
+                ? 'border-2 border-[var(--brand-primary)] shadow-xl'
+                : 'border border-[var(--border-cream)] shadow-md hover:shadow-lg'
+                }`}
             >
               {/* Top Ribbon */}
               {product.topRibbon && (
@@ -100,7 +96,7 @@ const ProductCards = () => {
               )}
 
               {/* Image & Zoom Container */}
-              <div className="relative w-full h-[280px] bg-white flex items-center justify-center p-4 overflow-hidden">
+              <div className="relative w-full bg-white flex items-center justify-center p-4 overflow-hidden" style={{ minHeight: '300px' }}>
                 {/* Badges */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none gap-2">
                   {product.topBadges.map((badge, index) => (
@@ -113,15 +109,13 @@ const ProductCards = () => {
                   ))}
                 </div>
 
-                {/* Full Image Box with custom scaling */}
-                <div className={`w-full h-full flex items-center justify-center transition-transform duration-300 ${product.imageScaleClass}`}>
-                  <InnerImageZoom
+                {/* Image — no fixed height, natural aspect ratio */}
+                <div className={`w-full flex items-center justify-center transition-transform duration-300 ${product.imageScaleClass}`}>
+                  <img
                     src={product.image}
-                    zoomSrc={product.image}
-                    zoomType="hover"
-                    zoomPreload={true}
                     alt={product.title}
-                    className="w-full h-full max-h-[240px] object-contain flex items-center justify-center"
+                    className="w-full h-auto object-contain max-h-[320px] block"
+                    draggable="false"
                   />
                 </div>
               </div>

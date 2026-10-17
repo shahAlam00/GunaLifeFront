@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -126,9 +127,9 @@ const Footer = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-between text-[10px] text-[var(--text-on-dark)]/70 gap-2">
                     <p>© 2026 GunaLife® • All rights reserved.</p>
                     <div className="flex items-center space-x-4">
-                        <a href="#privacy" className="hover:underline">Privacy Policy</a>
+                        <Link to="/policy" className="hover:underline">Privacy Policy</Link>
                         <span>•</span>
-                        <a href="#terms" className="hover:underline">Terms of Service</a>
+                        <Link to="/terms" className="hover:underline">Terms of Service</Link>
                     </div>
                 </div>
 

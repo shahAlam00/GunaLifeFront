@@ -5,12 +5,12 @@ const VerifiedReviews = () => {
 
     const initialReviews = [
         { id: 1, author: "Peter Portilla", time: "8 hours ago", title: "Architect dad of 3 \"Juice\"", text: "This product is the best, I work as an Architect and the focus and sustained energy it provides is exactly what I need...", replyTime: "8 hours ago" },
-        { id: 2, author: "Scott Frizzell", time: "12 hours ago", title: "Been taking the Beckham stack for 3...", text: "Been taking the Beckham stack for 3 months now - I'm finding my energy levels and mental clarity have increased noticeably. Sleep has been great too!!", replyTime: "9 hours ago" },
+        { id: 2, author: "Scott Frizzell", time: "12 hours ago", title: "Been taking the GunaLife stack for 3...", text: "Been taking the GunaLife stack for 3 months now - I'm finding my energy levels and mental clarity have increased noticeably. Sleep has been great too!!", replyTime: "9 hours ago" },
         { id: 3, author: "Bryn", time: "1 day ago", title: "Positive impact", text: "This product has improved my overall health. For someone with a lot of allergies this product is amazing absolutely no negative side effects.", replyTime: "1 day ago" },
         { id: 4, author: "Richard Akante", time: "2 days ago", title: "Great brand", text: "Great brand! In addition outstanding customer service team; sharp and responsive, with a solution in hand.", replyTime: "2 days ago" },
         { id: 5, author: "Robbie J", time: "4 days ago", title: "Have been taking GunaLife for a few weeks...", text: "Have been taking GunaLife for a few weeks now. So much easier than other supplements to take each morning. Better taste, easy to store and take on trips.", replyTime: "4 days ago" },
         { id: 6, author: "Eva", time: "5 days ago", title: "excellent human customer service", text: "excellent human customer service! I think the product is good but not 100% I saw significant results but overall I like the product.", replyTime: "4 days ago" },
-        { id: 7, author: "Aygul Ibragimova", time: "5 days ago", title: "GunaLife has changed my life", text: "A great product that has changed my life. I have been sleeping well since I started on the GunaLife Beckham stack, and that leads to more energy, better focus.", replyTime: "5 days ago" },
+        { id: 7, author: "Aygul Ibragimova", time: "5 days ago", title: "GunaLife has changed my life", text: "A great product that has changed my life. I have been sleeping well since I started on the GunaLife stack, and that leads to more energy, better focus.", replyTime: "5 days ago" },
         { id: 8, author: "Laura", time: "5 days ago", title: "I was really intrigued by this product...", text: "I was really intrigued by this product and the fact that there are so many nutrients in one serving so that I could eliminate some of my other subscriptions.", replyTime: "5 days ago" },
     ];
 
@@ -22,8 +22,8 @@ const VerifiedReviews = () => {
     const displayedReviews = showMore ? [...initialReviews, ...extraReviews] : initialReviews;
 
     return (
-        <section className="w-full bg-[var(--bg-cream)] text-[var(--brand-primary)] py-16 px-4 sm:px-6 md:px-12 select-none border-t border-[var(--border-cream)]">
-            <div className="max-w-[1280px] mx-auto space-y-10">
+        <section className="w-full bg-[var(--bg-cream)] text-[var(--brand-primary)] py-16 px-4 sm:px-8 md:px-12 lg:px-16 select-none border-t border-[var(--border-cream)]">
+            <div className="max-w-[1440px] mx-auto space-y-10">
 
                 <div className="text-center space-y-3">
                     <span className="inline-block px-4 py-1 rounded-full bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase">
@@ -51,15 +51,16 @@ const VerifiedReviews = () => {
                     </p>
                 </div>
 
-                <div className="max-w-[1100px] mx-auto">
+                <div className="max-w-[1320px] mx-auto">
                     <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wider">Showing our 5 star reviews</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1100px] mx-auto">
+                {/* Expanded Grid Width & Gap for Better Screen Coverage */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-[1320px] mx-auto">
                     {displayedReviews.map((review) => (
                         <div
                             key={review.id}
-                            className="bg-white border border-[var(--border-cream)] rounded-lg p-4 flex flex-col justify-between shadow-2xs hover:shadow-md transition-shadow duration-200"
+                            className="bg-white border border-[var(--border-cream)] rounded-xl p-5 flex flex-col justify-between shadow-2xs hover:shadow-md transition-shadow duration-200"
                         >
                             <div className="space-y-3">
                                 <div className="flex items-center gap-0.5">

@@ -19,6 +19,8 @@ import CartPage from './pages/CartPage';
 
 import Quality from './pages/Quality';
 import AboutUs from './pages/AboutUs';
+import PrivacyPolicy from './components/common/PrivacyPolicy.jsx';
+import TermsService from './components/common/TermsService.jsx';
 
 // Scrolls to top on every route change
 function ScrollToTop() {
@@ -54,6 +56,8 @@ const App = () => {
           <Route path="/cart" element={<CartPage />} />
           <Route path='/about' element={<AboutUs />} />
           <Route path='/quality' element={<Quality />} />
+          <Route path="/policy" element={<PrivacyPolicy/>}/>
+          <Route path="/terms" element={<TermsService/>}/>
           {/* 404 fallback */}
           <Route path="*" element={
             <div className="min-h-screen bg-[var(--bg-cream)] flex flex-col items-center justify-center text-[var(--brand-primary)] gap-4">
