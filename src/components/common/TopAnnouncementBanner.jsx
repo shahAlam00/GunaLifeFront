@@ -24,29 +24,36 @@ const TopAnnouncementBanner = () => {
   }, []);
 
   return (
-    <div className="relative w-full bg-[var(--banner-bg,#8B0000)] text-[var(--banner-text,#ffffff)] border-b border-[var(--banner-border,rgba(255,255,255,0.1))] select-none">
+    <div className="relative w-full bg-[var(--brand-primary)] text-white border-b border-white/10 select-none">
       <div className="max-w-[1440px] mx-auto w-full flex flex-col md:flex-row items-center justify-between min-h-[56px] px-4 md:px-8 py-2 gap-2">
 
+        {/* Spacer */}
         <div className="hidden md:block w-36 shrink-0" />
 
-        {/* Center Banner Content */}
+        {/* Center — price info */}
         <div className="flex-1 flex flex-col items-center justify-center text-center px-2">
           <p className="font-bold text-sm md:text-base tracking-tight leading-tight flex items-center gap-2 flex-wrap justify-center">
-            <span>Your first order comes with ₹1,794 of free gifts</span>
-            <span className="inline-block px-2 py-0.5 text-[10px] sm:text-xs font-extrabold uppercase bg-emerald-500 text-white rounded-full tracking-wider shadow-sm">
-              30% OFF AT ₹1,399
+            <span>
+              MRP <span className="line-through opacity-70">₹1,999</span>
+              {' · '}
+              Buy at ₹1,399
+            </span>
+            <span className="inline-block px-2 py-0.5 text-[10px] sm:text-xs font-extrabold uppercase bg-emerald-500 text-white rounded-full tracking-wider">
+              Save 30%
             </span>
           </p>
-          <p className="text-[11px] md:text-xs font-medium leading-tight opacity-90 mt-1">
-            Includes Signature Mixer, Storage Case & 5 Bonus Sachets · 90-day money-back guarantee
+          <p className="text-[11px] md:text-xs font-medium leading-tight opacity-80 mt-0.5 flex items-center justify-center gap-1.5 flex-wrap">
+            <span>≈ ₹600 savings · Free shipping included</span>
+            <span className="hidden sm:inline opacity-60">•</span>
+            <span>90-day money-back guarantee</span>
           </p>
         </div>
 
-        {/* Currency Switcher */}
+        {/* Right — Currency selector */}
         <div className="relative shrink-0 w-36 flex justify-end" ref={dropdownRef}>
           <button
             onClick={() => setIsDropdownOpen((prev) => !prev)}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-white/15 hover:bg-white/25 text-white font-semibold text-sm rounded-md transition-colors border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-white/15 hover:bg-white/25 text-white font-semibold text-sm rounded-md transition-colors border border-white/30 focus:outline-none"
             aria-label="Select Currency"
             aria-expanded={isDropdownOpen}
           >
@@ -66,13 +73,13 @@ const TopAnnouncementBanner = () => {
                   key={curr.code}
                   onClick={() => { setSelectedCurrency(curr.code); setIsDropdownOpen(false); }}
                   className={`w-full text-left px-4 py-2.5 text-sm transition-colors flex items-center justify-between ${selectedCurrency === curr.code
-                      ? 'bg-[var(--brand-primary,#8B0000)]/10 font-bold text-[var(--brand-primary,#8B0000)]'
+                      ? 'bg-[var(--brand-primary)]/10 font-bold text-[var(--brand-primary)]'
                       : 'hover:bg-gray-100 font-medium'
                     }`}
                 >
                   <span>{curr.label}</span>
                   {selectedCurrency === curr.code && (
-                    <svg className="w-3.5 h-3.5 text-[var(--brand-primary,#8B0000)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3.5 h-3.5 text-[var(--brand-primary)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
                     </svg>
                   )}

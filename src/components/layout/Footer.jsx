@@ -22,58 +22,49 @@ const Footer = () => {
                     <div className="space-y-3">
                         <h4 className="font-bold text-[11px] tracking-widest text-[var(--text-blush)] uppercase">SHOP</h4>
                         <ul className="space-y-2 text-[var(--text-on-dark)]/80 font-normal">
-                            <li><a href="#core-nutrition" className="hover:text-white transition-colors">Premium Core Nutrition</a></li>
-                            <li><a href="#beckham-stack" className="hover:text-white transition-colors">The Beckham Stack</a></li>
-                            <li><a href="#merchandise" className="hover:text-white transition-colors">Merchandise</a></li>
-                            <li><a href="#shop-all" className="hover:text-white transition-colors">Shop All</a></li>
+                          
+                            <li><Link to="/beckham-stack" className="hover:text-white transition-colors">The Beckham Stack</Link></li>
+                           
+                            <li><Link to="/shop" className="hover:text-white transition-colors">Shop All</Link></li>
                         </ul>
                     </div>
 
                     <div className="space-y-3">
                         <h4 className="font-bold text-[11px] tracking-widest text-[var(--text-blush)] uppercase">COMPANY</h4>
                         <ul className="space-y-2 text-[var(--text-on-dark)]/80 font-normal">
-                            <li><a href="#about-us" className="hover:text-white transition-colors">About Us</a></li>
-                            <li><a href="#inter-miami" className="hover:text-white transition-colors">Inter Miami CF</a></li>
-                            <li><a href="#science" className="hover:text-white transition-colors">Science</a></li>
-                            <li><a href="#impact" className="hover:text-white transition-colors">Impact</a></li>
+                            <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+
+                            <li><Link to="/science" className="hover:text-white transition-colors">Science</Link></li>
+
                         </ul>
                     </div>
 
                     <div className="space-y-3">
                         <h4 className="font-bold text-[11px] tracking-widest text-[var(--text-blush)] uppercase">LEARN</h4>
                         <ul className="space-y-2 text-[var(--text-on-dark)]/80 font-normal">
-                            <li><a href="#reviews" className="hover:text-white transition-colors">Reviews</a></li>
-                            <li><a href="#ingredients" className="hover:text-white transition-colors">Ingredients</a></li>
-                            <li><a href="#quality" className="hover:text-white transition-colors">Quality and Standards</a></li>
-                            <li><a href="#ambassador" className="hover:text-white transition-colors">GunaLife Ambassador Program</a></li>
-                            <li><a href="#vs-ag1" className="hover:text-white transition-colors">GunaLife vs AG1 Next Gen</a></li>
-                            <li><a href="#vs-liveitup" className="hover:text-white transition-colors">GunaLife vs Live It Up Super Greens</a></li>
-                            <li><a href="#vs-bloom" className="hover:text-white transition-colors">GunaLife vs Bloom Greens &amp; Superfoods</a></li>
-                            <li><a href="#vs-huel" className="hover:text-white transition-colors">GunaLife vs Huel Daily Greens</a></li>
+                            <li><Link to="/reviews" className="hover:text-white transition-colors">Reviews</Link></li>
+                            <li><Link to="/ingredients" className="hover:text-white transition-colors">Ingredients</Link></li>
+                            <li><Link to="/quality" className="hover:text-white transition-colors">Quality and Standards</Link></li>
+
                         </ul>
                     </div>
 
                     <div className="space-y-3">
                         <h4 className="font-bold text-[11px] tracking-widest text-[var(--text-blush)] uppercase">SUPPORT</h4>
                         <ul className="space-y-2 text-[var(--text-on-dark)]/80 font-normal">
-                            <li><a href="#faqs" className="hover:text-white transition-colors">FAQs</a></li>
-                            <li><a href="#track-order" className="hover:text-white transition-colors">Track My Order</a></li>
-                            <li><a href="#returns" className="hover:text-white transition-colors">Returns / Exchanges</a></li>
-                            <li><a href="#contact" className="hover:text-white transition-colors">Contact Us</a></li>
-                            <li><a href="#whatsapp" className="hover:text-white transition-colors">WhatsApp</a></li>
+                            <li><Link to="/welcome" className="hover:text-white transition-colors">Welcome from david</Link></li>
+
                         </ul>
                     </div>
 
                     <div className="space-y-3">
                         <h4 className="font-bold text-[11px] tracking-widest text-[var(--text-blush)] uppercase">GUNALIFE COMMUNITY</h4>
                         <ul className="space-y-2 text-[var(--text-on-dark)]/80 font-normal">
-                            <li><a href="#strava" className="hover:text-white transition-colors">GunaLife Strava Club</a></li>
+                         
                             <li><a href="#instagram" className="hover:text-white transition-colors">Instagram</a></li>
                             <li><a href="#facebook" className="hover:text-white transition-colors">Facebook</a></li>
-                            <li><a href="#tiktok" className="hover:text-white transition-colors">TikTok</a></li>
-                            <li><a href="#youtube" className="hover:text-white transition-colors">YouTube</a></li>
                             <li><a href="#pinterest" className="hover:text-white transition-colors">Pinterest</a></li>
-                            <li><a href="#refer" className="hover:text-white transition-colors">Refer a Friend</a></li>
+
                         </ul>
                     </div>
 

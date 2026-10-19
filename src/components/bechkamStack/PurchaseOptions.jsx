@@ -6,59 +6,59 @@ import Prod1 from '../../assets/Prod1.png'
 const PurchaseOptions = ({ selectedPlan, onSelectPlan, onOpenWelcomeKitModal }) => {
   const [showKitDetails, setShowKitDetails] = useState(false);
 
-const plans = [
-  {
-    id: '90-day',
-    title: '90-Day Supply',
-    discountBadge: '30% OFF',
-    isBestValue: true,
-    priceMonthly: '1,399',
-    mrp: '1,999',
-    billedText: 'Billed ₹5,997 every 90 days',
-    perDayText: 'Approx. ₹66.63 / DAY',
-    features: [
-      'Supports exercise performance and muscle recovery',
-      'Designed for fitness enthusiasts and gym-goers',
-      'Supports energy metabolism and healthy ageing',
-      'Ideal for adults with an active lifestyle',
-      'Built for long-term performance and wellness',
-    ],
-    welcomeKit: null,
-  },
-  {
-    id: '30-day',
-    title: '30-Day Supply',
-    discountBadge: '30% OFF',
-    isBestValue: false,
-    priceMonthly: '1,399',
-    mrp: '1,999',
-    billedText: 'One-time payment of ₹1,999',
-    perDayText: 'Approx. ₹66.63 / DAY',
-    features: [
-      '150 g GUNA-AGE+ Athletes + Longevity',
-      'Supports muscle performance and recovery',
-      'Combines performance-focused nutrients and antioxidants',
-      'Suitable for wellness-conscious adults',
-    ],
-    welcomeKit: null,
-  },
-  {
-    id: 'one-time',
-    title: 'One-Time Purchase',
-    discountBadge: '30% OFF',
-    isBestValue: false,
-    priceMonthly: '1,399',
-    mrp: '1,999',
-    billedText: 'One-time delivery of 150 g supply',
-    perDayText: 'Approx. ₹66.63 / DAY',
-    features: [
-      'Single 150 g product purchase',
-      'No recurring subscription',
-      'Supports performance, recovery, and long-term wellness',
-    ],
-    welcomeKit: null,
-  },
-];
+  const plans = [
+    {
+      id: '90-day',
+      title: '90-Day Supply',
+      discountBadge: '30% OFF',
+      isBestValue: true,
+      priceMonthly: '1,399',
+      mrp: '1,999',
+      billedText: 'Billed ₹5,997 every 90 days',
+      perDayText: 'Approx. ₹66.63 / DAY',
+      features: [
+        'Supports exercise performance and muscle recovery',
+        'Designed for fitness enthusiasts and gym-goers',
+        'Supports energy metabolism and healthy ageing',
+        'Ideal for adults with an active lifestyle',
+        'Built for long-term performance and wellness',
+      ],
+      welcomeKit: null,
+    },
+    {
+      id: '30-day',
+      title: '30-Day Supply',
+      discountBadge: '30% OFF',
+      isBestValue: false,
+      priceMonthly: '1,399',
+      mrp: '1,999',
+      billedText: 'One-time payment of ₹1,999',
+      perDayText: 'Approx. ₹66.63 / DAY',
+      features: [
+        '150 g GUNA-AGE+ Athletes + Longevity',
+        'Supports muscle performance and recovery',
+        'Combines performance-focused nutrients and antioxidants',
+        'Suitable for wellness-conscious adults',
+      ],
+      welcomeKit: null,
+    },
+    {
+      id: 'one-time',
+      title: 'One-Time Purchase',
+      discountBadge: '30% OFF',
+      isBestValue: false,
+      priceMonthly: '1,399',
+      mrp: '1,999',
+      billedText: 'One-time delivery of 150 g supply',
+      perDayText: 'Approx. ₹66.63 / DAY',
+      features: [
+        'Single 150 g product purchase',
+        'No recurring subscription',
+        'Supports performance, recovery, and long-term wellness',
+      ],
+      welcomeKit: null,
+    },
+  ];
 
   return (
     <div className="space-y-4 pt-4">
@@ -74,11 +74,10 @@ const plans = [
             <div
               key={plan.id}
               onClick={() => onSelectPlan(plan.id)}
-              className={`relative rounded-2xl transition-all duration-200 cursor-pointer overflow-hidden ${
-                isSelected
-                  ? 'border-2 border-[var(--brand-primary)] bg-[var(--bg-warm)] shadow-md'
-                  : 'border border-[var(--border-warm)] bg-[var(--bg-cream)] hover:border-[var(--brand-primary)]/50 hover:bg-[var(--bg-warm)]/60'
-              }`}
+              className={`relative rounded-2xl transition-all duration-200 cursor-pointer overflow-hidden ${isSelected
+                ? 'border-2 border-[var(--brand-primary)] bg-[var(--bg-warm)] shadow-md'
+                : 'border border-[var(--border-warm)] bg-[var(--bg-cream)] hover:border-[var(--brand-primary)]/50 hover:bg-[var(--bg-warm)]/60'
+                }`}
             >
               {/* BEST VALUE top-right pill */}
               {plan.isBestValue && (
@@ -93,11 +92,10 @@ const plans = [
                   <div className="flex items-center gap-3">
                     {/* Custom Radio Button */}
                     <div
-                      className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors flex-shrink-0 ${
-                        isSelected
-                          ? 'border-[var(--brand-primary)] bg-[var(--brand-primary)]'
-                          : 'border-[var(--border-muted)] bg-white'
-                      }`}
+                      className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors flex-shrink-0 ${isSelected
+                        ? 'border-[var(--brand-primary)] bg-[var(--brand-primary)]'
+                        : 'border-[var(--border-muted)] bg-white'
+                        }`}
                     >
                       {isSelected && (
                         <div className="w-2 h-2 rounded-full bg-white" />
@@ -119,17 +117,25 @@ const plans = [
                   {/* Price */}
                   <div className="text-right flex-shrink-0">
                     <div className="text-lg sm:text-2xl font-serif font-bold text-[var(--brand-primary)] leading-none">
-                      Mrp. {plan.priceMonthly}
+                      ₹{plan.priceMonthly}
                       <span className="text-xs sm:text-sm font-sans font-normal text-[var(--text-muted)]">
                         {plan.id === 'one-time' ? '' : ' /mo'}
                       </span>
+                    </div>
+                    <div className="text-xs text-[var(--text-muted)] line-through mt-0.5">
+                      MRP ₹{plan.mrp}
                     </div>
                   </div>
                 </div>
 
                 {/* Subtext info row */}
                 <div className="flex flex-wrap items-center justify-between text-[11px] sm:text-xs text-[var(--text-muted)] pt-2 pb-1 border-b border-[var(--border-warm)]">
-                  <span>{plan.billedText}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[9px] font-extrabold uppercase tracking-wide border border-emerald-200">
+                      30% OFF
+                    </span>
+                    <span>{plan.billedText}</span>
+                  </div>
                   <span className="font-semibold text-[var(--brand-teal)]">
                     {plan.perDayText}
                   </span>
