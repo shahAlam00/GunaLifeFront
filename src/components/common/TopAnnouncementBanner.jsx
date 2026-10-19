@@ -24,36 +24,31 @@ const TopAnnouncementBanner = () => {
   }, []);
 
   return (
-    <div className="relative w-full bg-[var(--brand-primary)] text-white border-b border-white/10 select-none">
+    <div className="relative w-full bg-[var(--banner-bg,#8B0000)] text-[var(--banner-text,#ffffff)] border-b border-[var(--banner-border,rgba(255,255,255,0.1))] select-none">
       <div className="max-w-[1440px] mx-auto w-full flex flex-col md:flex-row items-center justify-between min-h-[56px] px-4 md:px-8 py-2 gap-2">
 
-        {/* Spacer */}
         <div className="hidden md:block w-36 shrink-0" />
 
-        {/* Center — price info */}
+        {/* Center Banner Content */}
         <div className="flex-1 flex flex-col items-center justify-center text-center px-2">
           <p className="font-bold text-sm md:text-base tracking-tight leading-tight flex items-center gap-2 flex-wrap justify-center">
-            <span>
-              MRP <span className="line-through opacity-70">₹1,999</span>
-              {' · '}
-              Buy at ₹1,399
-            </span>
-            <span className="inline-block px-2 py-0.5 text-[10px] sm:text-xs font-extrabold uppercase bg-emerald-500 text-white rounded-full tracking-wider">
+            <span>MRP <span className="line-through opacity-75">₹1,999</span> · Buy at ₹1,399</span>
+            <span className="inline-block px-2 py-0.5 text-[10px] sm:text-xs font-extrabold uppercase bg-emerald-500 text-white rounded-full tracking-wider shadow-sm">
               Save 30%
             </span>
           </p>
-          <p className="text-[11px] md:text-xs font-medium leading-tight opacity-80 mt-0.5 flex items-center justify-center gap-1.5 flex-wrap">
-            <span>≈ ₹600 savings · Free shipping included</span>
+          <p className="text-[11px] md:text-xs font-medium leading-tight opacity-90 mt-1 flex items-center justify-center gap-1.5 flex-wrap">
+            <span>Supports healthy ageing and cellular health</span>
             <span className="hidden sm:inline opacity-60">•</span>
-            <span>90-day money-back guarantee</span>
+            <span>✓ Antioxidant support for everyday wellness</span>
           </p>
         </div>
 
-        {/* Right — Currency selector */}
+        {/* Currency Switcher */}
         <div className="relative shrink-0 w-36 flex justify-end" ref={dropdownRef}>
           <button
             onClick={() => setIsDropdownOpen((prev) => !prev)}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-white/15 hover:bg-white/25 text-white font-semibold text-sm rounded-md transition-colors border border-white/30 focus:outline-none"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-white/15 hover:bg-white/25 text-white font-semibold text-sm rounded-md transition-colors border border-white/35 focus:outline-none focus:ring-2 focus:ring-white/50"
             aria-label="Select Currency"
             aria-expanded={isDropdownOpen}
           >
@@ -72,14 +67,15 @@ const TopAnnouncementBanner = () => {
                 <button
                   key={curr.code}
                   onClick={() => { setSelectedCurrency(curr.code); setIsDropdownOpen(false); }}
-                  className={`w-full text-left px-4 py-2.5 text-sm transition-colors flex items-center justify-between ${selectedCurrency === curr.code
-                      ? 'bg-[var(--brand-primary)]/10 font-bold text-[var(--brand-primary)]'
+                  className={`w-full text-left px-4 py-2.5 text-sm transition-colors flex items-center justify-between ${
+                    selectedCurrency === curr.code
+                      ? 'bg-[var(--brand-primary,#8B0000)]/10 font-bold text-[var(--brand-primary,#8B0000)]'
                       : 'hover:bg-gray-100 font-medium'
-                    }`}
+                  }`}
                 >
                   <span>{curr.label}</span>
                   {selectedCurrency === curr.code && (
-                    <svg className="w-3.5 h-3.5 text-[var(--brand-primary)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3.5 h-3.5 text-[var(--brand-primary,#8B0000)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
                     </svg>
                   )}
