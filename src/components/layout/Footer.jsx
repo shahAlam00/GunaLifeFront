@@ -61,10 +61,8 @@ const Footer = () => {
                         <h4 className="font-bold text-[11px] tracking-widest text-[var(--text-blush)] uppercase">GUNALIFE COMMUNITY</h4>
                         <ul className="space-y-2 text-[var(--text-on-dark)]/80 font-normal">
                          
-                            <li><a href="#instagram" className="hover:text-white transition-colors">Instagram</a></li>
-                            <li><a href="#facebook" className="hover:text-white transition-colors">Facebook</a></li>
-                            <li><a href="#pinterest" className="hover:text-white transition-colors">Pinterest</a></li>
-
+                            <li><a href="https://www.instagram.com/gunalife_official/" className="hover:text-white transition-colors">Instagram</a></li>
+                            <li><a href="https://www.facebook.com/people/GunaLife/61592407246546/" className="hover:text-white transition-colors">Facebook</a></li>
                         </ul>
                     </div>
 
