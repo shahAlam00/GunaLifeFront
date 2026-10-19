@@ -52,34 +52,7 @@ const ProductAccordions = ({ onOpenNutritionModal }) => {
               <span>5. Glutathione — 150 mg</span>
             </div>
             <p className="text-xs text-[var(--text-muted)] pl-3.5">
-              An antioxidant naturally produced by the body that helps protect cells against oxidative stress and supports normal cellular processes.
-Supplement Facts
-Active ingredient
-Amount per 6 g serving
-Creatine Monohydrate
-3,000 mg
-Taurine
-1,000 mg
-L-Leucine
-1,000 mg
-Resveratrol
-150 mg
-Glutathione
-150 mg
-Total active ingredients
-5,300 mg
-Other ingredients/carriers
-700 mg
-Total serving size
-6,000 mg (6 g)Product Details
-Brand: GUNALIFE
-Product: GUNA-AGE+
-Net quantity: 120 g
-Serving size: 6 g
-Total servings: 20 per container
-Product positioning: Daily wellness and vitality
-Important Information
-This product is not intended to diagnose, treat, cure, or prevent any disease. Use as directed on the final approved product label. Individual results may vary. Consult a qualified healthcare professional before use if you have a medical condition or take medication. Keep out of reach of children.
+             Glutathione 150 mg is a powerful antioxidant naturally produced by the body. It helps protect cells from oxidative stress and supports cellular health. It has also been studied for potential skin-brightening effects, although results vary.
 </p>
           </div>
           <div className="pt-1">

@@ -26,9 +26,9 @@ const VerifiedReviews = () => {
             <div className="max-w-[1440px] mx-auto space-y-10">
 
                 <div className="text-center space-y-3">
-                    <span className="inline-block px-4 py-1 rounded-full bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase">
+                    {/* <span className="inline-block px-4 py-1 rounded-full bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase">
                         VERIFIED REVIEWS
-                    </span>
+                    </span> */}
                     <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-normal text-[#1A1A1A] leading-tight">
                         The Clinical Trial said 95% felt more energy. <br className="hidden sm:inline" />
                         <span className="italic font-light text-[var(--brand-primary)]">
@@ -37,7 +37,7 @@ const VerifiedReviews = () => {
                     </h2>
                 </div>
 
-                <div className="flex flex-col items-center justify-center space-y-1.5 pt-2">
+                {/* <div className="flex flex-col items-center justify-center space-y-1.5 pt-2">
                     <div className="flex items-center gap-2">
                         <span className="font-bold text-sm text-black">Excellent</span>
                         <div className="flex items-center gap-1">
@@ -49,14 +49,14 @@ const VerifiedReviews = () => {
                     <p className="text-[11px] text-gray-600 font-medium">
                         Rated <span className="font-bold text-black">4.5</span> / 5 based on <span className="underline font-bold text-black">2,030 reviews</span> on <span className="font-bold text-black">★ Trustpilot</span>
                     </p>
-                </div>
+                </div> */}
 
-                <div className="max-w-[1320px] mx-auto">
+                {/* <div className="max-w-[1320px] mx-auto">
                     <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wider">Showing our 5 star reviews</p>
-                </div>
+                </div> */}
 
                 {/* Expanded Grid Width & Gap for Better Screen Coverage */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-[1320px] mx-auto">
+                {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-[1320px] mx-auto">
                     {displayedReviews.map((review) => (
                         <div
                             key={review.id}
@@ -90,9 +90,9 @@ const VerifiedReviews = () => {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
 
-                <div className="text-center pt-4">
+                {/* <div className="text-center pt-4">
                     <button
                         onClick={() => setShowMore(!showMore)}
                         className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[var(--brand-primary)] text-[var(--brand-primary)] hover:bg-[var(--brand-primary)] hover:text-white transition-all duration-200 text-xs font-bold tracking-wider uppercase shadow-2xs active:scale-95 cursor-pointer"
@@ -100,7 +100,7 @@ const VerifiedReviews = () => {
                         {showMore ? 'SHOW FEWER REVIEWS' : 'SHOW MORE REVIEWS'}
                         <span className="text-xs">{showMore ? '▲' : '▼'}</span>
                     </button>
-                </div>
+                </div> */}
 
             </div>
         </section>

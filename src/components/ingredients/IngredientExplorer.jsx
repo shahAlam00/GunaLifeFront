@@ -1,5 +1,10 @@
 
 import React, { useMemo, useState } from "react";
+import Ingred1 from "../../assets/Ingred1.jpeg";
+import Ingred2 from "../../assets/Ingred2.jpeg";
+import Ingred3 from "../../assets/Ingred3.jpeg";
+import Ingred5 from "../../assets/Ingred5.jpeg";
+import Ingred6 from "../../assets/Ingred6.jpeg";
 
 const PRODUCTS = [
   "Daily Ultimate Essentials",
@@ -24,7 +29,7 @@ const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 const INGREDIENTS = {
   "Vitamins & Minerals": [
-    "Vitamin A",
+    "Creatine Monohydrate",
     "Vitamin B2",
     "Vitamin B6",
     "Vitamin B12",
@@ -180,9 +185,8 @@ function PlusIcon({ expanded }) {
       viewBox="0 0 40 40"
       fill="none"
       aria-hidden="true"
-      className={`h-10 w-10 transition-transform duration-300 ${
-        expanded ? "rotate-45" : ""
-      }`}
+      className={`h-10 w-10 transition-transform duration-300 ${expanded ? "rotate-45" : ""
+        }`}
     >
       <path
         d="M20 12V28M12 20H28"
@@ -197,7 +201,7 @@ function PlusIcon({ expanded }) {
 function IngredientCard({ ingredient, index, product }) {
   const [flipped, setFlipped] = useState(false);
 
-  const image = IMAGES[index % IMAGES.length];
+  const image = ingredient.image || IMAGES[index % IMAGES.length];
 
   return (
     <article
@@ -205,9 +209,8 @@ function IngredientCard({ ingredient, index, product }) {
       onClick={() => setFlipped((value) => !value)}
     >
       <div
-        className={`relative grid w-full transition-transform duration-500 [transform-style:preserve-3d] motion-reduce:transition-none ${
-          flipped ? "[transform:rotateY(180deg)]" : ""
-        }`}
+        className={`relative grid w-full transition-transform duration-500 [transform-style:preserve-3d] motion-reduce:transition-none ${flipped ? "[transform:rotateY(180deg)]" : ""
+          }`}
         style={{ minHeight: 316 }}
       >
         {/* FRONT */}
@@ -363,6 +366,67 @@ const INGREDIENT_LIST = Object.entries(INGREDIENTS).flatMap(
     names.map((name, index) => makeIngredient(name, category, index))
 );
 
+// Override first 6 cards with real product info
+const FEATURED_OVERRIDES = [
+  {
+    id: "featured-1",
+    name: "Creatine Monohydrate",
+    category: "CRT8",
+    image: Ingred2,
+    description: "Supports rapid energy regeneration during short, high-intensity exercise and can improve strength and exercise performance when used appropriately.",
+    details: "Creatine Monohydrate is one of the most researched sports nutrition ingredients. It works by increasing phosphocreatine stores in muscle, supporting ATP regeneration during high-intensity efforts. Evidence for strength and power improvements is well-established.",
+    amount: null,
+  },
+  {
+    id: "featured-2",
+    name: "Taurine",
+    category: "Amino sulfonic acid",
+    image: Ingred6,
+    description: "Participates in cellular fluid balance, calcium signalling and normal physiological functions. Research into exercise performance is ongoing.",
+    details: "Taurine is conditionally essential and found in high concentrations in muscle, brain and heart tissue. It plays roles in osmoregulation, bile salt conjugation, and antioxidant defence. Its role in exercise recovery is an active area of research.",
+    amount: null,
+  },
+  {
+    id: "featured-3",
+    name: "L-Leucine",
+    category: "Essential amino acid",
+    image: Ingred5,
+    description: "Plays a key role in signalling pathways involved in muscle protein synthesis, alongside adequate protein intake and other essential amino acids.",
+    details: "L-Leucine is a branched-chain amino acid (BCAA) that activates the mTOR signalling pathway, a primary regulator of muscle protein synthesis. It must be consumed through diet or supplementation as the body cannot synthesise it.",
+    amount: null,
+  },
+  {
+    id: "featured-4",
+    name: "Glutathione",
+    category: "Antioxidant tripeptide",
+    image: null,
+    description: "A naturally occurring compound that helps maintain cellular antioxidant defences and redox balance.",
+    details: "Glutathione is a tripeptide (glutamate, cysteine, glycine) and the most abundant intracellular antioxidant. It plays a central role in neutralising free radicals, supporting immune function, and detoxification processes in the liver and other tissues.",
+    amount: null,
+  },
+  {
+    id: "featured-5",
+    name: "Resveratrol",
+    category: "Polyphenol",
+    image: Ingred3,
+    description: "A plant-derived compound studied for its interactions with cellular stress-response and metabolic pathways. Human evidence for longevity benefits remains insufficient.",
+    details: "Resveratrol is found naturally in grapes, berries and peanuts. It activates sirtuins (SIRT1) and AMPK, which are involved in cellular energy sensing and stress response. Most robust findings are from in-vitro or animal studies; human clinical evidence is still developing.",
+    amount: null,
+  },
+  {
+    id: "featured-6",
+    name: "Inulin",
+    category: "Prebiotic dietary fibre",
+    image: Ingred1,
+    description: "A fermentable fibre that can support beneficial gut bacteria and bowel regularity. Larger amounts may cause gas or bloating.",
+    details: "Inulin is a naturally occurring fructan found in chicory root, garlic, and onions. As a prebiotic, it selectively feeds Bifidobacterium and Lactobacillus species in the gut. It also contributes to stool bulking and may support mineral absorption.",
+    amount: null,
+  },
+];
+
+// Prepend the 6 featured cards to the full list
+const FINAL_INGREDIENT_LIST = [...FEATURED_OVERRIDES, ...INGREDIENT_LIST];
+
 export default function IngredientExplorer() {
   const [activeProduct, setActiveProduct] = useState(PRODUCTS[0]);
   const [activeCategory, setActiveCategory] = useState("All");
@@ -370,7 +434,7 @@ export default function IngredientExplorer() {
   const [search, setSearch] = useState("");
 
   const visibleIngredients = useMemo(() => {
-    return INGREDIENT_LIST.filter((ingredient) => {
+    return FINAL_INGREDIENT_LIST.filter((ingredient) => {
       const matchesCategory =
         activeCategory === "All" ||
         ingredient.category === activeCategory;
@@ -406,11 +470,10 @@ export default function IngredientExplorer() {
                 type="button"
                 onClick={() => setActiveProduct(product)}
                 aria-pressed={active}
-                className={`rounded-full border border-[var(--brand-deep)] px-4 py-2 text-[11px] font-semibold transition-colors sm:text-[12px] ${
-                  active
-                    ? "bg-[var(--bg-warm)] text-[var(--brand-deep)]"
-                    : "bg-white text-[var(--brand-deep)] hover:bg-[var(--bg-cream)]"
-                }`}
+                className={`rounded-full border border-[var(--brand-deep)] px-4 py-2 text-[11px] font-semibold transition-colors sm:text-[12px] ${active
+                  ? "bg-[var(--bg-warm)] text-[var(--brand-deep)]"
+                  : "bg-white text-[var(--brand-deep)] hover:bg-[var(--bg-cream)]"
+                  }`}
               >
                 {product}
               </button>
@@ -429,11 +492,10 @@ export default function IngredientExplorer() {
                 type="button"
                 onClick={() => changeCategory(category)}
                 aria-pressed={active}
-                className={`rounded-full border px-3 py-[5px] text-[10px] leading-[1.35] transition-colors sm:text-[11px] ${
-                  active
-                    ? "border-[var(--brand-primary)] bg-[var(--brand-primary)] text-white"
-                    : "border-[var(--brand-primary)] bg-white text-[var(--brand-deep)] hover:bg-[var(--bg-warm)]"
-                }`}
+                className={`rounded-full border px-3 py-[5px] text-[10px] leading-[1.35] transition-colors sm:text-[11px] ${active
+                  ? "border-[var(--brand-primary)] bg-[var(--brand-primary)] text-white"
+                  : "border-[var(--brand-primary)] bg-white text-[var(--brand-deep)] hover:bg-[var(--bg-warm)]"
+                  }`}
               >
                 {category}
               </button>
@@ -473,11 +535,10 @@ export default function IngredientExplorer() {
                   onClick={() => setActiveLetter(active ? "" : letter)}
                   aria-pressed={active}
                   aria-label={`Filter ingredients beginning with ${letter}`}
-                  className={`flex h-7 min-w-6 items-center justify-center rounded-full px-1 text-[11px] font-semibold transition-colors ${
-                    active
-                      ? "bg-[var(--brand-primary)] text-white"
-                      : "text-[var(--brand-deep)] hover:bg-white"
-                  }`}
+                  className={`flex h-7 min-w-6 items-center justify-center rounded-full px-1 text-[11px] font-semibold transition-colors ${active
+                    ? "bg-[var(--brand-primary)] text-white"
+                    : "text-[var(--brand-deep)] hover:bg-white"
+                    }`}
                 >
                   {letter}
                 </button>

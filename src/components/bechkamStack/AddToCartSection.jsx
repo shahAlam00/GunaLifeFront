@@ -10,13 +10,13 @@ const AddToCartSection = ({ selectedPlan, selectedFlavor, onAddToCart }) => {
   const getPrice = () => {
     switch (selectedPlan) {
       case '90-day':
-        return 'Mrp. 932.33 /mo';
+        return '₹1,399 /mo';
       case '30-day':
-        return 'Dhs. 1,065 /mo';
+        return '₹1,399 /mo';
       case 'one-time':
-        return 'Dhs. 1,335.00';
+        return '₹1,399';
       default:
-        return 'Dhs. 932.33 /mo';
+        return '₹1,399 /mo';
     }
   };
 
@@ -43,25 +43,25 @@ const AddToCartSection = ({ selectedPlan, selectedFlavor, onAddToCart }) => {
       const planDetails =
         selectedPlan === '90-day'
           ? {
-              planName: 'Quarterly Subscription',
-              deliveryInterval: 'Deliver every 12 weeks',
-              price: 2797,
-              compareAtPrice: 3996,
-              savingsQuarterly: 3597
-            }
+            planName: 'Quarterly Subscription',
+            deliveryInterval: 'Deliver every 12 weeks',
+            price: 1399,
+            compareAtPrice: 1999,
+            savingsQuarterly: 600
+          }
           : selectedPlan === '30-day'
-          ? {
+            ? {
               planName: 'Monthly Subscription',
               deliveryInterval: 'Deliver every 4 weeks',
-              price: 1065,
-              compareAtPrice: 1335,
-              savingsQuarterly: 810
+              price: 1399,
+              compareAtPrice: 1999,
+              savingsQuarterly: 600
             }
-          : {
+            : {
               planName: 'One-Time Purchase',
               deliveryInterval: 'Single Order',
-              price: 1335,
-              compareAtPrice: 1335,
+              price: 1399,
+              compareAtPrice: 1999,
               savingsQuarterly: 0
             };
 

@@ -12,12 +12,12 @@ const products = [
     image: Prod3,
     topBadges: ["Clinicians' Choice"],
     category: 'DAILY CELLULAR REJUVENATION',
-    title: 'GUNALIFE GUNA-AGE+ Skin Transformation Longevity',
+    title: 'GUNALIFE GUNA-AGE+ Skin Transformation',
     description:
       'Scientifically formulated daily skin transformation supplement designed to support skin health, hydration, elasticity, and radiance while promoting a smoother, brighter, and more youthful-looking complexion from within.',
-    mrp: '₹1699',
+    mrp: '₹1,699',
     price: '₹1,189.00',
-    perServing: '≈ ₹510.00/serving',
+    perServing: '≈ ₹510.00/saving',
     discountBadge: '30% OFF',
     subtext: 'Free shipping included',
     features: [
@@ -28,12 +28,12 @@ const products = [
     ],
     buttonText: 'Add to Cart',
     bottomLink: '',
-    imageScaleClass: 'scale-110 sm:scale-125', // Zoom adjustment specifically for Prod3
+    imageScaleClass: 'scale-110 sm:scale-125', // Zoom adjustment for Prod3
   },
   {
     id: 2,
-    topRibbon: '★ POPULAR CHOICE',
-    isFeatured: false,
+    topRibbon: '★ Popular Choice',
+    isFeatured: true,
     image: Prod4,
     topBadges: ['Anti-Aging Expert Pick'],
     category: 'ULTIMATE YOUTH STACK',
@@ -42,7 +42,7 @@ const products = [
       'GUNALIFE GUNA-AGE+ Athletes + Longevity is an advanced daily supplement formulated to support exercise performance, muscle recovery, energy metabolism, and healthy ageing with key nutrients and antioxidants.',
     mrp: '₹1,999',
     price: '₹1,399.00',
-    perServing: '≈ ₹600.00/serving',
+    perServing: '≈ ₹600.00/saving',
     discountBadge: '30% OFF',
     subtext: 'Free shipping included',
     features: [
@@ -52,7 +52,8 @@ const products = [
       '✓ Formulated by world-class longevity scientists',
     ],
     buttonText: 'Add to Cart',
-    imageScaleClass: 'scale-100', // Standard scale for Prod4
+    bottomLink: '',
+    imageScaleClass: 'scale-110 sm:scale-125', // Zoom adjustment for Prod4 (matched with Prod3)
   },
 ];
 
@@ -83,10 +84,11 @@ const ProductCards = () => {
           {products.map((product) => (
             <article
               key={product.id}
-              className={`relative w-full max-w-[380px] mx-auto bg-[var(--bg-cream)] rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ${product.isFeatured
-                ? 'border-2 border-[var(--brand-primary)] shadow-xl'
-                : 'border border-[var(--border-cream)] shadow-md hover:shadow-lg'
-                }`}
+              className={`relative w-full max-w-[380px] mx-auto bg-[var(--bg-cream)] rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ${
+                product.isFeatured
+                  ? 'border-2 border-[var(--brand-primary)]'
+                  : 'border border-[var(--border-cream)] hover:shadow-lg'
+              }`}
             >
               {/* Top Ribbon */}
               {product.topRibbon && (
@@ -109,7 +111,7 @@ const ProductCards = () => {
                   ))}
                 </div>
 
-                {/* Image — no fixed height, natural aspect ratio */}
+                {/* Image — Zoomed identically across cards */}
                 <div className={`w-full flex items-center justify-center transition-transform duration-300 ${product.imageScaleClass}`}>
                   <img
                     src={product.image}
@@ -139,7 +141,7 @@ const ProductCards = () => {
                 {/* Pricing Section */}
                 <div className="pt-3 border-t border-[var(--border-cream)] space-y-2">
                   <div className="flex items-baseline flex-wrap gap-2">
-                    <span className="font-serif text-xl sm:text-2xl font-bold text-[var(--brand-primary)]">
+                    <span className="text-xl sm:text-2xl font-bold text-[var(--brand-primary)]">
                       {product.price}
                     </span>
 

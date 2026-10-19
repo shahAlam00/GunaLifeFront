@@ -23,22 +23,22 @@ const StickyBuyBar = ({ selectedPlan, selectedFlavor, onAddToCart }) => {
   const getPrice = () => {
     switch (selectedPlan) {
       case '90-day':
-        return 'Dhs. 932.33/mo';
+        return '?1,399/mo';
       case '30-day':
-        return 'Dhs. 1,065/mo';
+        return '?1,399/mo';
       case 'one-time':
-        return 'Dhs. 1,335.00';
+        return '?1,399';
       default:
-        return 'Dhs. 932.33/mo';
+        return '?1,399/mo';
     }
   };
 
   const getPlanLabel = () => {
     switch (selectedPlan) {
       case '90-day':
-        return '90-Day Supply (Save 33%)';
+        return '90-Day Supply (Save 30%)';
       case '30-day':
-        return '30-Day Supply (Save 20%)';
+        return '30-Day Supply (Save 30%)';
       case 'one-time':
         return 'One-Time Purchase';
       default:
@@ -71,23 +71,23 @@ const StickyBuyBar = ({ selectedPlan, selectedFlavor, onAddToCart }) => {
           ? {
               planName: 'Quarterly Subscription',
               deliveryInterval: 'Deliver every 12 weeks',
-              price: 2797,
-              compareAtPrice: 3996,
-              savingsQuarterly: 3597
+              price: 1399,
+              compareAtPrice: 1999,
+              savingsQuarterly: 600
             }
           : selectedPlan === '30-day'
           ? {
               planName: 'Monthly Subscription',
               deliveryInterval: 'Deliver every 4 weeks',
-              price: 1065,
-              compareAtPrice: 1335,
-              savingsQuarterly: 810
+              price: 1399,
+              compareAtPrice: 1999,
+              savingsQuarterly: 600
             }
           : {
               planName: 'One-Time Purchase',
               deliveryInterval: 'Single Order',
-              price: 1335,
-              compareAtPrice: 1335,
+              price: 1399,
+              compareAtPrice: 1999,
               savingsQuarterly: 0
             };
 

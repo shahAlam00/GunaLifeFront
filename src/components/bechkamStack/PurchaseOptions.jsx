@@ -12,8 +12,8 @@ const plans = [
     title: '90-Day Supply',
     discountBadge: '30% OFF',
     isBestValue: true,
-    priceMonthly: '1,999',
-    mrp: '2,999',
+    priceMonthly: '1,399',
+    mrp: '1,999',
     billedText: 'Billed ₹5,997 every 90 days',
     perDayText: 'Approx. ₹66.63 / DAY',
     features: [
@@ -30,8 +30,8 @@ const plans = [
     title: '30-Day Supply',
     discountBadge: '30% OFF',
     isBestValue: false,
-    priceMonthly: '1,999',
-    mrp: '2,999',
+    priceMonthly: '1,399',
+    mrp: '1,999',
     billedText: 'One-time payment of ₹1,999',
     perDayText: 'Approx. ₹66.63 / DAY',
     features: [
@@ -47,8 +47,8 @@ const plans = [
     title: 'One-Time Purchase',
     discountBadge: '30% OFF',
     isBestValue: false,
-    priceMonthly: '1,999',
-    mrp: '2,999',
+    priceMonthly: '1,399',
+    mrp: '1,999',
     billedText: 'One-time delivery of 150 g supply',
     perDayText: 'Approx. ₹66.63 / DAY',
     features: [

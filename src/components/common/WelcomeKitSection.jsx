@@ -10,9 +10,9 @@ const WelcomeKitSection = () => {
 
     // Updated Bonus Items
     const bonusItems = [
-        { title: "30-Day Anti-Aging Program", description: "Daily wellness, nutrition and skincare routine" },
-        { title: "90-Day Longevity Countdown", description: "A structured 90-day habit tracker" },
-        { title: "Longevity Diet Chart", description: "A practical nutrition and meal-planning guide" },
+        { title: "GunaLife Extra Rewards", description: "Offer a Fixed Discount upto 30% OFF for qualified next Order." },
+        { title: "30-Days Wellness Tracker", description: "Daily Hydration, Nutrition Activity consistency checklist." },
+        { title: "90-Days Longevity GunaLife Guide", description: "Digital Diet Guidence habbit tracking progress schedule." },
         { title: "Extra Voucher for Second Order", description: "A discount voucher for a future purchase" },
     ];
 
